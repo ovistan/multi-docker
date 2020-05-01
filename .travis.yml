@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ovist/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true ovist/react-test npm run test
+
+after_success:
+  - docker build -t ovist/section7-client ./client
+  - docker build -t ovist/section7-nginx ./nginx
+  - docker build -t ovist/section7-server ./server
+  - docker build -t ovist/section7-worker ./worker
+  # Login to docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password_stdin
+  # Push to docker
+  - docker push ovist/section7-client
+  - docker push ovist/section7-nginx
+  - docker push ovist/section7-server
+  - docker push ovist/section7-worker
