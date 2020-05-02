@@ -23,9 +23,9 @@
       "memory": 128
     },
     {
-      "name": "nginx",
+      "name": "nginx-p",
       "image": "ovist/section7-nginx",
-      "hostname": "nginx",
+      "hostname": "nginx-p",
       "essential": true,
       "portMappings": [
         {
