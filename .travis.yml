@@ -26,7 +26,7 @@ deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
   app: "Section7-Multi"
-  env: "Section7-Multi-env"
+  env: "Section7Multi-env"
   bucket_name: "elasticbeanstalk-eu-central-1-032634976589"
   bucket_path: "Section7-Multi"
   on:
