@@ -6,21 +6,21 @@
       "image": "ovist/section7-client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 256
     },
     {
       "name": "server",
       "image": "ovist/section7-server",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 256
     },
     {
       "name": "worker",
       "image": "ovist/section7-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 256
     },
     {
       "name": "nginx",
@@ -34,7 +34,7 @@
         }
       ],
       "links": ["client", "server"],
-      "memory": 128
+      "memory": 256
     }
   ]
 }
